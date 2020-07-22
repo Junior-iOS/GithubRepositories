@@ -56,7 +56,6 @@ class RepositoriesListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.prefetchDataSource = self
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
@@ -84,14 +83,6 @@ extension RepositoriesListViewController: RepositoriesListDisplayLogic {
 
 }
 
-extension RepositoriesListViewController: UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            interactor?.requestNextPage(index: indexPath.row)
-        }
-    }
-}
-
 extension RepositoriesListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -107,7 +98,7 @@ extension RepositoriesListViewController: UITableViewDelegate, UITableViewDataSo
             let viewModel = interactor?.cellForRow(at: indexPath.row) else { return UITableViewCell() }
         
         cell.configureCell(viewModel: viewModel)
-        //cell.accessibilityLabel = .repositoryRow
+        cell.accessibilityLabel = "Repositórios"
         
         return cell
     }
