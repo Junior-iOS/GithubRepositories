@@ -35,7 +35,7 @@ enum RepositoriesList {
             self.description = repository.description
             self.stars = repository.stars
             self.forks = repository.forks
-            self.ownerName = "\(repository.owner.name)"
+            self.ownerName = repository.owner.name
             self.ownerAvatar = repository.owner.avatar
         }
     }

@@ -15,30 +15,66 @@
 import UIKit
 
 protocol RepositoriesListBusinessLogic {
-    func loadRepositoriesList()
+    func loadRepositoriesList(_ page: Int)
+    func requestNextPage(index: Int)
+    
+    func didSelectRow(at index: Int)
+    var numberOfRows: Int { get }
+    func cellForRow(at index: Int) -> RepositoriesList.ViewModel?
 }
 
 protocol RepositoriesListDataStore {
-    //var name: String { get set }
+    var repository: Repository? { get set }
 }
 
 class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesListDataStore {
     var presenter: RepositoriesListPresentationLogic?
     var worker: RepositoriesListWorker?
     
+    var repository: Repository?
+    var repositories = [Repository]()
+    var currentPage: Int = 1
+    var pageSize: Int = 25
+    
     init(worker: RepositoriesListWorker = RepositoriesListWorker()) {
         self.worker = worker
     }
     
-    func loadRepositoriesList() {
-        worker?.searchRepositoriesList(page: 1).done(handleSuccess).catch(handleError)
+    func didSelectRow(at index: Int) {
+        guard index >= 0 && index < numberOfRows else { return }
+        repository = repositories[index]
+        presenter?.presentPullRequestsList()
+    }
+    
+    var numberOfRows: Int {
+        repositories.count
+    }
+    
+    func cellForRow(at index: Int) -> RepositoriesList.ViewModel? {
+        let repository = repositories[index]
+        return RepositoriesList.ViewModel(repository: repository)
+    }
+    
+    func loadRepositoriesList(_ page: Int) {
+        worker?.searchRepositoriesList(page: page).done(handleSuccess).catch(handleError).finally {
+            self.presenter?.stopsActivityIndicator()
+        }
     }
     
     private func handleSuccess(_ response: RepositoriesList.Response) {
-        print(response)
+        guard let repositoriesResponse = response.repositories else { return }
+        repositories = repositoriesResponse
+        presenter?.reloadTableView()
     }
     
     private func handleError(_ error: Error) {
         
+    }
+    
+    func requestNextPage(index: Int) {
+        let targetCount = currentPage < 0 ? 1 : currentPage * pageSize - 10
+        if index != targetCount { return }
+        currentPage += 1
+        loadRepositoriesList(currentPage)
     }
 }

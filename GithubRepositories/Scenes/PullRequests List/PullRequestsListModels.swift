@@ -13,14 +13,35 @@
 import UIKit
 
 enum PullRequestsList {
-    // MARK: Use cases
-
-    enum Something {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
+    
+    struct RequestList: Codable {
+        let author: Owner
+        let title: String
+        let date: String
+        let body: String
+        
+        enum CodingKeys: String, CodingKey {
+            case author = "user"
+            case title
+            case date = "created_at"
+            case body
         }
     }
+    
+    struct ViewModel {
+        let title: String
+        let body: String
+        let author: String
+        let authorImage: String
+        let date: String
+        
+        init(pullRequest: RequestList) {
+            title = pullRequest.title
+            body = pullRequest.body
+            author = pullRequest.author.name
+            authorImage = pullRequest.author.avatar
+            date = pullRequest.date
+        }
+    }
+    
 }

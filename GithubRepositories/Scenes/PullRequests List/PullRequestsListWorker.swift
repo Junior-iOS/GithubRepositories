@@ -13,8 +13,14 @@
 // CUCKOO_TESTABLE
 
 import Foundation
+import PromiseKit
 
 class PullRequestsListWorker {
-    func doSomeWork() {
+    
+    let networkProvider = NetworkProvider.shared
+    
+    func searchPullRequestsList(_ repository: Repository) -> Promise<PullRequestsList.RequestList> {
+        networkProvider.request(.pullRequests(author: repository.owner.name, repository: repository.name))
     }
+    
 }

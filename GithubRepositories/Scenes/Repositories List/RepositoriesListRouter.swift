@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol RepositoriesListRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToPullRequestsList()
 }
 
 protocol RepositoriesListDataPassing {
@@ -24,31 +24,15 @@ class RepositoriesListRouter: NSObject, RepositoriesListRoutingLogic, Repositori
     weak var viewController: RepositoriesListViewController?
     var dataStore: RepositoriesListDataStore?
 
-    // MARK: Routing
-
-    //func routeToSomewhere(segue: UIStoryboardSegue?) {
-    //  if let segue = segue {
-    //      let destinationVC = segue.destination as! SomewhereViewController
-    //      var destinationDS = destinationVC.router!.dataStore!
-    //      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //  } else {
-    //      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //      let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-    //      var destinationDS = destinationVC.router!.dataStore!
-    //      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-    //      navigateToSomewhere(source: viewController!, destination: destinationVC)
-    //  }
-    //}
-
-    // MARK: Navigation
-
-    //func navigateToSomewhere(source: RepositoriesListViewController, destination: SomewhereViewController) {
-    //  source.show(destination, sender: nil)
-    //}
-
-    // MARK: Passing data
-
-    //func passDataToSomewhere(source: RepositoriesListDataStore, destination: inout SomewhereDataStore) {
-    //  destination.name = source.name
-    //}
+    func routeToPullRequestsList() {
+        let destinationVC = PullRequestsListViewController()
+        var destinationDataStore = destinationVC.router?.dataStore
+        passDataToPullRequestsList(source: dataStore, destination: &destinationDataStore)
+        viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    func passDataToPullRequestsList(source: RepositoriesListDataStore?, destination: inout PullRequestsListDataStore?) {
+        guard let source = source, var destination = destination else { return }
+        destination.repository = source.repository
+    }
 }

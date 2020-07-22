@@ -43,6 +43,11 @@ class PullRequestsListViewController: UIViewController {
         router.viewController = viewController
         router.dataStore = interactor
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor?.fetchPullRequestsList()
+    }
 
 }
 

@@ -15,15 +15,34 @@
 import UIKit
 
 protocol PullRequestsListBusinessLogic {
-    
+    func fetchPullRequestsList()
 }
 
 protocol PullRequestsListDataStore {
-    
+    var repository: Repository? { get set }
 }
 
 class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsListDataStore {
     var presenter: PullRequestsListPresentationLogic?
     var worker: PullRequestsListWorker?
+    
+    var repository: Repository?
+    
+    init(worker: PullRequestsListWorker = PullRequestsListWorker()) {
+        self.worker = worker
+    }
+    
+    func fetchPullRequestsList() {
+        guard let selectedRepository = repository else { return }
+        worker?.searchPullRequestsList(selectedRepository).done(handleSuccess).catch(handleError)
+    }
+    
+    private func handleSuccess(_ response: PullRequestsList.RequestList) {
+        print(response)
+    }
+    
+    private func handleError(_ error: Error) {
+        print(error.localizedDescription)
+    }
     
 }

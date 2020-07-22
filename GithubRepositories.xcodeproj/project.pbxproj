@@ -23,7 +23,9 @@
 		142AC8A224C7B451004076FB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A124C7B451004076FB /* Endpoint.swift */; };
 		142AC8A424C7B588004076FB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A324C7B588004076FB /* NetworkProvider.swift */; };
 		142AC8A624C7B5B1004076FB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A524C7B5B1004076FB /* NetworkError.swift */; };
-		142AC8A924C7C18A004076FB /* RepositoriesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */; };
+		142AC8BC24C7FCB0004076FB /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142AC8BB24C7FCB0004076FB /* RepositoriesListViewController.xib */; };
+		142AC8BE24C7FF9A004076FB /* RepositoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8BD24C7FF9A004076FB /* RepositoriesListTableViewCell.swift */; };
+		142AC8C124C80041004076FB /* CustomViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8C024C80041004076FB /* CustomViewDelegate.swift */; };
 		148D17E424C79FFF0037DB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E324C79FFF0037DB00 /* AppDelegate.swift */; };
 		148D17E624C79FFF0037DB00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E524C79FFF0037DB00 /* SceneDelegate.swift */; };
 		148D17ED24C7A0000037DB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D17EC24C7A0000037DB00 /* Assets.xcassets */; };
@@ -60,7 +62,9 @@
 		142AC8A124C7B451004076FB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		142AC8A324C7B588004076FB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		142AC8A524C7B5B1004076FB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableHeaderView.swift; sourceTree = "<group>"; };
+		142AC8BB24C7FCB0004076FB /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
+		142AC8BD24C7FF9A004076FB /* RepositoriesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewCell.swift; sourceTree = "<group>"; };
+		142AC8C024C80041004076FB /* CustomViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDelegate.swift; sourceTree = "<group>"; };
 		148D17E024C79FFF0037DB00 /* GithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148D17E324C79FFF0037DB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148D17E524C79FFF0037DB00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				142AC88724C7B012004076FB /* RepositoriesListPresenter.swift */,
 				142AC88C24C7B012004076FB /* RepositoriesListInteractor.swift */,
 				142AC88B24C7B012004076FB /* RepositoriesListViewController.swift */,
+				142AC8BB24C7FCB0004076FB /* RepositoriesListViewController.xib */,
 			);
 			path = "Repositories List";
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		142AC8A024C7B0DC004076FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				142AC8BF24C8001B004076FB /* Protocols */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -174,9 +180,17 @@
 		142AC8A724C7C161004076FB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */,
+				142AC8BD24C7FF9A004076FB /* RepositoriesListTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		142AC8BF24C8001B004076FB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				142AC8C024C80041004076FB /* CustomViewDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		148D17D724C79FFF0037DB00 = {
@@ -327,6 +341,7 @@
 			files = (
 				148D17F024C7A0000037DB00 /* LaunchScreen.storyboard in Resources */,
 				148D17ED24C7A0000037DB00 /* Assets.xcassets in Resources */,
+				142AC8BC24C7FCB0004076FB /* RepositoriesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,15 +448,16 @@
 				142AC89F24C7B0BF004076FB /* PullRequestsListInteractor.swift in Sources */,
 				142AC89D24C7B0BF004076FB /* PullRequestsListModels.swift in Sources */,
 				142AC88F24C7B012004076FB /* RepositoriesListRouter.swift in Sources */,
-				142AC8A924C7C18A004076FB /* RepositoriesTableHeaderView.swift in Sources */,
 				142AC89B24C7B0BF004076FB /* PullRequestsListWorker.swift in Sources */,
 				142AC8A424C7B588004076FB /* NetworkProvider.swift in Sources */,
 				142AC89A24C7B0BF004076FB /* PullRequestsListPresenter.swift in Sources */,
 				142AC8A224C7B451004076FB /* Endpoint.swift in Sources */,
 				148D17E424C79FFF0037DB00 /* AppDelegate.swift in Sources */,
+				142AC8C124C80041004076FB /* CustomViewDelegate.swift in Sources */,
 				148D17E624C79FFF0037DB00 /* SceneDelegate.swift in Sources */,
 				142AC88E24C7B012004076FB /* RepositoriesListWorker.swift in Sources */,
 				142AC8A624C7B5B1004076FB /* NetworkError.swift in Sources */,
+				142AC8BE24C7FF9A004076FB /* RepositoriesListTableViewCell.swift in Sources */,
 				142AC89E24C7B0BF004076FB /* PullRequestsListViewController.swift in Sources */,
 				142AC89024C7B012004076FB /* RepositoriesListModels.swift in Sources */,
 			);

@@ -15,11 +15,23 @@
 import UIKit
 
 protocol RepositoriesListPresentationLogic {
-    
+    func reloadTableView()
+    func stopsActivityIndicator()
+    func presentPullRequestsList()
 }
 
 class RepositoriesListPresenter: RepositoriesListPresentationLogic {
     weak var viewController: RepositoriesListDisplayLogic?
 
+    func reloadTableView() {
+        viewController?.reloadData()
+    }
     
+    func stopsActivityIndicator() {
+        viewController?.stopsActivityIndicator()
+    }
+    
+    func presentPullRequestsList() {
+        viewController?.displayPullRequestsList()
+    }
 }
