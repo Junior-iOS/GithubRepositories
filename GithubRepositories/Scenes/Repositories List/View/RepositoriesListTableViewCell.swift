@@ -114,11 +114,25 @@ class RepositoriesListTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var repositoryDescriptionLabel: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont(name: "Avenir Next", size: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .justified
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
+    
     func configureCell(viewModel: RepositoriesList.ViewModel) {
         repositoryNameLabel.text = viewModel.name
         repositoryOwnerLabel.text = viewModel.ownerName
         repositoryStarsAmountLabel.text = "\(viewModel.stars)"
         repositoryForksAmountLabel.text = "\(viewModel.forks)"
+        repositoryDescriptionLabel.text = viewModel.description
         
         if let photoUrl = URL(string: viewModel.ownerAvatar) {
             repositoryPhotoImageView.sd_setImage(with: photoUrl)
@@ -144,6 +158,7 @@ extension RepositoriesListTableViewCell: CustomViewDelegate {
         repositoryView.addSubview(repositoryStarsAmountLabel)
         repositoryView.addSubview(repositoryForksImage)
         repositoryView.addSubview(repositoryForksAmountLabel)
+        repositoryView.addSubview(repositoryDescriptionLabel)
     }
     
     func setupConstraints() {
@@ -160,7 +175,8 @@ extension RepositoriesListTableViewCell: CustomViewDelegate {
 
         NSLayoutConstraint.activate([repositoryNameLabel.topAnchor.constraint(equalTo: repositoryPhotoImageView.topAnchor, constant: 2),
                                      repositoryNameLabel.leadingAnchor.constraint(equalTo: repositoryPhotoImageView.trailingAnchor, constant: 8),
-                                     repositoryNameLabel.trailingAnchor.constraint(equalTo: repositoryStarsAmountLabel.leadingAnchor, constant: 8)
+                                     repositoryNameLabel.trailingAnchor.constraint(equalTo: repositoryStarsAmountLabel.leadingAnchor, constant: 8),
+                                     repositoryNameLabel.heightAnchor.constraint(equalToConstant: 15)
         ])
 
         NSLayoutConstraint.activate([repositoryStarsImage.topAnchor.constraint(equalTo: repositoryNameLabel.topAnchor, constant: 0),
@@ -179,7 +195,7 @@ extension RepositoriesListTableViewCell: CustomViewDelegate {
         NSLayoutConstraint.activate([repositoryOwnerLabel.topAnchor.constraint(equalTo: repositoryNameLabel.bottomAnchor, constant: 2),
                                      repositoryOwnerLabel.leadingAnchor.constraint(equalTo: repositoryNameLabel.leadingAnchor),
                                      repositoryOwnerLabel.trailingAnchor.constraint(equalTo: repositoryNameLabel.trailingAnchor),
-                                     repositoryOwnerLabel.bottomAnchor.constraint(equalTo: repositoryView.bottomAnchor, constant: -16)
+                                     repositoryOwnerLabel.heightAnchor.constraint(equalToConstant: 15)
         ])
         
         NSLayoutConstraint.activate([repositoryForksImage.topAnchor.constraint(equalTo: repositoryOwnerLabel.topAnchor, constant: 0),
@@ -190,8 +206,14 @@ extension RepositoriesListTableViewCell: CustomViewDelegate {
         ])
         
         NSLayoutConstraint.activate([repositoryForksAmountLabel.topAnchor.constraint(equalTo: repositoryForksImage.topAnchor, constant: 0),
-                                     repositoryForksAmountLabel.trailingAnchor.constraint(equalTo: repositoryView.trailingAnchor, constant: -16), //????
+                                     repositoryForksAmountLabel.trailingAnchor.constraint(equalTo: repositoryView.trailingAnchor, constant: -16),
                                      repositoryForksAmountLabel.widthAnchor.constraint(equalToConstant: 60)
+        ])
+        
+        NSLayoutConstraint.activate([repositoryDescriptionLabel.topAnchor.constraint(equalTo: repositoryOwnerLabel.bottomAnchor, constant: 8),
+                                     repositoryDescriptionLabel.leadingAnchor.constraint(equalTo: repositoryPhotoImageView.leadingAnchor),
+                                     repositoryDescriptionLabel.trailingAnchor.constraint(equalTo: repositoryForksAmountLabel.trailingAnchor),
+                                     repositoryDescriptionLabel.bottomAnchor.constraint(equalTo: repositoryView.bottomAnchor, constant: -16)
         ])
     }
     
