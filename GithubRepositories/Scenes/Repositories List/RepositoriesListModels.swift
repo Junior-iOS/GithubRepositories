@@ -13,14 +13,56 @@
 import UIKit
 
 enum RepositoriesList {
-    // MARK: Use cases
+    
+    struct Response: Codable {
+        let repositories: [Repository]?
+        
+        enum CodingKeys: String, CodingKey {
+            case repositories = "items"
+        }
+    }
+    
+    struct ViewModel {
+        let name: String
+        let description: String
+        let stars: Int
+        let forks: Int
+        let ownerName: String
+        let ownerAvatar: String
+        
+        init(repository: Repository) {
+            self.name = repository.name
+            self.description = repository.description
+            self.stars = repository.stars
+            self.forks = repository.forks
+            self.ownerName = "\(repository.owner.name)"
+            self.ownerAvatar = repository.owner.avatar
+        }
+    }
+}
 
-    enum Something {
-        struct Request {
-        }
-        struct Response {
-        }
-        struct ViewModel {
-        }
+struct Repository: Codable {
+    let name: String
+    let description: String
+    let stars: Int
+    let forks: Int
+    let owner: Owner
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case description
+        case stars = "stargazers_count"
+        case forks = "forks_count"
+        case owner
+    }
+}
+
+struct Owner: Codable {
+    let name: String
+    let avatar: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case avatar = "avatar_url"
     }
 }

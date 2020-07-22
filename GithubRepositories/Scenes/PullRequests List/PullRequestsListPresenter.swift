@@ -15,16 +15,11 @@
 import UIKit
 
 protocol PullRequestsListPresentationLogic {
-    func presentSomething(response: PullRequestsList.Something.Response)
+    
 }
 
 class PullRequestsListPresenter: PullRequestsListPresentationLogic {
     weak var viewController: PullRequestsListDisplayLogic?
 
-    // MARK: Do something
-
-    func presentSomething(response: PullRequestsList.Something.Response) {
-        let viewModel = PullRequestsList.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
+    
 }

@@ -15,16 +15,11 @@
 import UIKit
 
 protocol RepositoriesListPresentationLogic {
-    func presentSomething(response: RepositoriesList.Something.Response)
+    
 }
 
 class RepositoriesListPresenter: RepositoriesListPresentationLogic {
     weak var viewController: RepositoriesListDisplayLogic?
 
-    // MARK: Do something
-
-    func presentSomething(response: RepositoriesList.Something.Response) {
-        let viewModel = RepositoriesList.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
+    
 }

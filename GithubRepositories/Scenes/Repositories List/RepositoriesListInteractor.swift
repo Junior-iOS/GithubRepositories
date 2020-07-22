@@ -15,7 +15,7 @@
 import UIKit
 
 protocol RepositoriesListBusinessLogic {
-    func doSomething(request: RepositoriesList.Something.Request)
+    func loadRepositoriesList()
 }
 
 protocol RepositoriesListDataStore {
@@ -25,15 +25,20 @@ protocol RepositoriesListDataStore {
 class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesListDataStore {
     var presenter: RepositoriesListPresentationLogic?
     var worker: RepositoriesListWorker?
-    //var name: String = ""
-
-    // MARK: Do something
-
-    func doSomething(request: RepositoriesList.Something.Request) {
-        worker = RepositoriesListWorker()
-        worker?.doSomeWork()
-
-        let response = RepositoriesList.Something.Response()
-        presenter?.presentSomething(response: response)
+    
+    init(worker: RepositoriesListWorker = RepositoriesListWorker()) {
+        self.worker = worker
+    }
+    
+    func loadRepositoriesList() {
+        worker?.searchRepositoriesList(page: 1).done(handleSuccess).catch(handleError)
+    }
+    
+    private func handleSuccess(_ response: RepositoriesList.Response) {
+        print(response)
+    }
+    
+    private func handleError(_ error: Error) {
+        
     }
 }

@@ -13,18 +13,13 @@
 import UIKit
 
 protocol PullRequestsListDisplayLogic: class {
-    func displaySomething(viewModel: PullRequestsList.Something.ViewModel)
+    
 }
 
 class PullRequestsListViewController: UIViewController {
-    // MARK: Clean Swift
+    
     var interactor: PullRequestsListBusinessLogic?
     var router: (NSObjectProtocol & PullRequestsListRoutingLogic & PullRequestsListDataPassing)?
-
-    // MARK: IBOutlets
-
-
-    // MARK: Setup
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -49,29 +44,10 @@ class PullRequestsListViewController: UIViewController {
         router.dataStore = interactor
     }
 
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-
-    // MARK: Do something
-
-    func doSomething() {
-        let request = PullRequestsList.Something.Request()
-        interactor?.doSomething(request: request)
-    }
 }
 
 extension PullRequestsListViewController: PullRequestsListDisplayLogic {
 
-    func displaySomething(viewModel: PullRequestsList.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
-    }
+    
 
 }

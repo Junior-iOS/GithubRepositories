@@ -20,6 +20,10 @@
 		142AC89D24C7B0BF004076FB /* PullRequestsListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC89724C7B0BF004076FB /* PullRequestsListModels.swift */; };
 		142AC89E24C7B0BF004076FB /* PullRequestsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC89824C7B0BF004076FB /* PullRequestsListViewController.swift */; };
 		142AC89F24C7B0BF004076FB /* PullRequestsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC89924C7B0BF004076FB /* PullRequestsListInteractor.swift */; };
+		142AC8A224C7B451004076FB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A124C7B451004076FB /* Endpoint.swift */; };
+		142AC8A424C7B588004076FB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A324C7B588004076FB /* NetworkProvider.swift */; };
+		142AC8A624C7B5B1004076FB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A524C7B5B1004076FB /* NetworkError.swift */; };
+		142AC8A924C7C18A004076FB /* RepositoriesTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */; };
 		148D17E424C79FFF0037DB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E324C79FFF0037DB00 /* AppDelegate.swift */; };
 		148D17E624C79FFF0037DB00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E524C79FFF0037DB00 /* SceneDelegate.swift */; };
 		148D17ED24C7A0000037DB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D17EC24C7A0000037DB00 /* Assets.xcassets */; };
@@ -53,6 +57,10 @@
 		142AC89724C7B0BF004076FB /* PullRequestsListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListModels.swift; sourceTree = "<group>"; };
 		142AC89824C7B0BF004076FB /* PullRequestsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListViewController.swift; sourceTree = "<group>"; };
 		142AC89924C7B0BF004076FB /* PullRequestsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListInteractor.swift; sourceTree = "<group>"; };
+		142AC8A124C7B451004076FB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		142AC8A324C7B588004076FB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		142AC8A524C7B5B1004076FB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableHeaderView.swift; sourceTree = "<group>"; };
 		148D17E024C79FFF0037DB00 /* GithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148D17E324C79FFF0037DB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148D17E524C79FFF0037DB00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +121,9 @@
 		142AC88424C7AFA9004076FB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				142AC8A124C7B451004076FB /* Endpoint.swift */,
+				142AC8A324C7B588004076FB /* NetworkProvider.swift */,
+				142AC8A524C7B5B1004076FB /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -129,6 +140,7 @@
 		142AC88624C7AFEB004076FB /* Repositories List */ = {
 			isa = PBXGroup;
 			children = (
+				142AC8A724C7C161004076FB /* View */,
 				142AC88824C7B012004076FB /* RepositoriesListWorker.swift */,
 				142AC88924C7B012004076FB /* RepositoriesListRouter.swift */,
 				142AC88A24C7B012004076FB /* RepositoriesListModels.swift */,
@@ -142,12 +154,12 @@
 		142AC89324C7B078004076FB /* PullRequests List */ = {
 			isa = PBXGroup;
 			children = (
-				142AC89424C7B0BF004076FB /* PullRequestsListPresenter.swift */,
 				142AC89524C7B0BF004076FB /* PullRequestsListWorker.swift */,
 				142AC89624C7B0BF004076FB /* PullRequestsListRouter.swift */,
 				142AC89724C7B0BF004076FB /* PullRequestsListModels.swift */,
-				142AC89824C7B0BF004076FB /* PullRequestsListViewController.swift */,
+				142AC89424C7B0BF004076FB /* PullRequestsListPresenter.swift */,
 				142AC89924C7B0BF004076FB /* PullRequestsListInteractor.swift */,
+				142AC89824C7B0BF004076FB /* PullRequestsListViewController.swift */,
 			);
 			path = "PullRequests List";
 			sourceTree = "<group>";
@@ -157,6 +169,14 @@
 			children = (
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		142AC8A724C7C161004076FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				142AC8A824C7C18A004076FB /* RepositoriesTableHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		148D17D724C79FFF0037DB00 = {
@@ -413,11 +433,15 @@
 				142AC89F24C7B0BF004076FB /* PullRequestsListInteractor.swift in Sources */,
 				142AC89D24C7B0BF004076FB /* PullRequestsListModels.swift in Sources */,
 				142AC88F24C7B012004076FB /* RepositoriesListRouter.swift in Sources */,
+				142AC8A924C7C18A004076FB /* RepositoriesTableHeaderView.swift in Sources */,
 				142AC89B24C7B0BF004076FB /* PullRequestsListWorker.swift in Sources */,
+				142AC8A424C7B588004076FB /* NetworkProvider.swift in Sources */,
 				142AC89A24C7B0BF004076FB /* PullRequestsListPresenter.swift in Sources */,
+				142AC8A224C7B451004076FB /* Endpoint.swift in Sources */,
 				148D17E424C79FFF0037DB00 /* AppDelegate.swift in Sources */,
 				148D17E624C79FFF0037DB00 /* SceneDelegate.swift in Sources */,
 				142AC88E24C7B012004076FB /* RepositoriesListWorker.swift in Sources */,
+				142AC8A624C7B5B1004076FB /* NetworkError.swift in Sources */,
 				142AC89E24C7B0BF004076FB /* PullRequestsListViewController.swift in Sources */,
 				142AC89024C7B012004076FB /* RepositoriesListModels.swift in Sources */,
 			);

@@ -13,8 +13,14 @@
 // CUCKOO_TESTABLE
 
 import Foundation
+import PromiseKit
 
 class RepositoriesListWorker {
-    func doSomeWork() {
+    
+    let networkProvider = NetworkProvider.shared
+    
+    func searchRepositoriesList(page: Int) -> Promise<RepositoriesList.Response> {
+        networkProvider.request(.search(page: page))
     }
+    
 }

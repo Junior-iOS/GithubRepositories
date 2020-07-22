@@ -15,25 +15,15 @@
 import UIKit
 
 protocol PullRequestsListBusinessLogic {
-    func doSomething(request: PullRequestsList.Something.Request)
+    
 }
 
 protocol PullRequestsListDataStore {
-    //var name: String { get set }
+    
 }
 
 class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsListDataStore {
     var presenter: PullRequestsListPresentationLogic?
     var worker: PullRequestsListWorker?
-    //var name: String = ""
-
-    // MARK: Do something
-
-    func doSomething(request: PullRequestsList.Something.Request) {
-        worker = PullRequestsListWorker()
-        worker?.doSomeWork()
-
-        let response = PullRequestsList.Something.Response()
-        presenter?.presentSomething(response: response)
-    }
+    
 }
