@@ -52,12 +52,14 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     func fetchPullRequestsList() {
         guard let selectedRepository = repository else { return }
         worker?.searchPullRequestsList(selectedRepository).done(handleSuccess).catch(handleError).finally {
+            self.presenter?.stopActivityIndicator()
             self.presenter?.reloadTable()
         }
     }
     
     private func handleSuccess(_ response: [PullRequestsList.RequestList]) {
         pullRequests = response
+        pullRequests.isEmpty ? presenter?.presentEmptyState() : presenter?.reloadTable()
     }
     
     private func handleError(_ error: Error) {

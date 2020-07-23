@@ -16,6 +16,8 @@ import UIKit
 
 protocol PullRequestsListPresentationLogic {
     func reloadTable()
+    func stopActivityIndicator()
+    func presentEmptyState()
 }
 
 class PullRequestsListPresenter: PullRequestsListPresentationLogic {
@@ -23,5 +25,13 @@ class PullRequestsListPresenter: PullRequestsListPresentationLogic {
     
     func reloadTable() {
         viewController?.reloadTable()
+    }
+    
+    func stopActivityIndicator() {
+        viewController?.stopActivityIndicator()
+    }
+    
+    func presentEmptyState() {
+        viewController?.displayEmptyState()
     }
 }

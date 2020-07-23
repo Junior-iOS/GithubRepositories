@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PullRequestsListViewController" customModule="GithubRepositories" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="3T7-wV-VeT" id="fsQ-DV-DHU"/>
                 <outlet property="tableView" destination="dBg-iF-cTH" id="sRA-qd-1Vs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9Ck-dh-eCE"/>
             </connections>
@@ -22,9 +23,14 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-wV-VeT">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="3T7-wV-VeT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9s8-3f-e0E"/>
+                <constraint firstItem="3T7-wV-VeT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cyb-MN-3nC"/>
                 <constraint firstItem="dBg-iF-cTH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Nci-SH-jbL"/>
                 <constraint firstItem="dBg-iF-cTH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Sxt-uO-js8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dBg-iF-cTH" secondAttribute="bottom" id="lKs-n8-yXV"/>

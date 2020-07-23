@@ -14,14 +14,21 @@ import UIKit
 
 protocol PullRequestsListDisplayLogic: class {
     func reloadTable()
+    func stopActivityIndicator()
+    func displayEmptyState()
 }
 
 class PullRequestsListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var interactor: PullRequestsListBusinessLogic?
     var router: (NSObjectProtocol & PullRequestsListRoutingLogic & PullRequestsListDataPassing)?
+    
+    let tableHeaderView = PullRequestsTableViewHeader()
+    let kScreenWidth = UIScreen.main.bounds.width
+    let kTableViewFooterHeight: CGFloat = 188
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -46,6 +53,20 @@ class PullRequestsListViewController: UIViewController {
         router.dataStore = interactor
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if let headerView = tableView.tableHeaderView {
+            let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+            var headerFrame = headerView.frame
+            if height != headerFrame.size.height {
+                headerFrame.size.height = height
+                headerView.frame = headerFrame
+                tableView.tableHeaderView = headerView
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -53,6 +74,7 @@ class PullRequestsListViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.tableHeaderView = tableHeaderView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -64,6 +86,19 @@ class PullRequestsListViewController: UIViewController {
 extension PullRequestsListViewController: PullRequestsListDisplayLogic {
     
     func reloadTable() {
+        tableView.reloadData()
+    }
+    
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
+    
+    func displayEmptyState() {
+        tableHeaderView.typeLabel.text = "Ops!"
+        let footer = PullRequestsTableViewFooter()
+        footer.frame.size.height = kTableViewFooterHeight
+        footer.frame.size.width = kScreenWidth
+        tableView.tableFooterView = footer
         tableView.reloadData()
     }
 
