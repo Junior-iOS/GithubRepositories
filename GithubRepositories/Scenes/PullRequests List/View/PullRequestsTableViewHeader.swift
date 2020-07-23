@@ -20,7 +20,7 @@ class PullRequestsTableViewHeader: UIView {
     
     lazy var typeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Pull Requests"
+        label.text = "Loading..."
         label.font = UIFont(name: "Avenir Next", size: 26)
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false

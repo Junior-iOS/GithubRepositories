@@ -58,8 +58,9 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     }
     
     private func handleSuccess(_ response: [PullRequestsList.RequestList]) {
+        guard let repo = repository else { return }
         pullRequests = response
-        pullRequests.isEmpty ? presenter?.presentEmptyState() : presenter?.reloadTable()
+        pullRequests.isEmpty ? presenter?.presentEmptyState() : presenter?.presentRequestOwner(repo)
     }
     
     private func handleError(_ error: Error) {

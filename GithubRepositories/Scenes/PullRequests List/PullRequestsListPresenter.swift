@@ -18,6 +18,7 @@ protocol PullRequestsListPresentationLogic {
     func reloadTable()
     func stopActivityIndicator()
     func presentEmptyState()
+    func presentRequestOwner(_ repo: Repository)
 }
 
 class PullRequestsListPresenter: PullRequestsListPresentationLogic {
@@ -33,5 +34,9 @@ class PullRequestsListPresenter: PullRequestsListPresentationLogic {
     
     func presentEmptyState() {
         viewController?.displayEmptyState()
+    }
+    
+    func presentRequestOwner(_ repo: Repository) {
+        viewController?.displayRequestOwner(repo)
     }
 }

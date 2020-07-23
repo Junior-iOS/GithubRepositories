@@ -16,6 +16,7 @@ protocol PullRequestsListDisplayLogic: class {
     func reloadTable()
     func stopActivityIndicator()
     func displayEmptyState()
+    func displayRequestOwner(_ repo: Repository)
 }
 
 class PullRequestsListViewController: UIViewController {
@@ -91,6 +92,11 @@ extension PullRequestsListViewController: PullRequestsListDisplayLogic {
     
     func stopActivityIndicator() {
         activityIndicator.stopAnimating()
+    }
+    
+    func displayRequestOwner(_ repo: Repository) {
+        tableHeaderView.typeLabel.text = "\(repo.owner.name.capitalized) pull requests"
+        reloadTable()
     }
     
     func displayEmptyState() {
