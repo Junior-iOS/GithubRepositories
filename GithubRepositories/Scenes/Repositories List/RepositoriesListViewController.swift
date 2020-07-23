@@ -38,6 +38,7 @@ class RepositoriesListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
         interactor?.loadRepositoriesList(1)
     }
@@ -55,13 +56,17 @@ class RepositoriesListViewController: UIViewController {
         router.dataStore = interactor
     }
     
+    private func setupNavigationBar() {
+        navigationItem.title = "Repositories"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
         tableView.backgroundColor = .clear
         tableView.layer.backgroundColor = UIColor.clear.cgColor
-        //tableView.refreshControl = customRefreshControl
         tableView.register(RepositoriesListTableViewCell.self, forCellReuseIdentifier: RepositoriesListTableViewCell.identifier)
     }
     

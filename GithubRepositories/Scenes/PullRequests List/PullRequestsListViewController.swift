@@ -18,6 +18,8 @@ protocol PullRequestsListDisplayLogic: class {
 
 class PullRequestsListViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var interactor: PullRequestsListBusinessLogic?
     var router: (NSObjectProtocol & PullRequestsListRoutingLogic & PullRequestsListDataPassing)?
 
@@ -46,7 +48,13 @@ class PullRequestsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         interactor?.fetchPullRequestsList()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
 }
@@ -55,4 +63,21 @@ extension PullRequestsListViewController: PullRequestsListDisplayLogic {
 
     
 
+}
+
+// MARK TABLEVIEW DELEGATE AND DATASOURCE
+extension PullRequestsListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }
