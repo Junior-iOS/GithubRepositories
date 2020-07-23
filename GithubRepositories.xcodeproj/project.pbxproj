@@ -301,6 +301,7 @@
 			buildConfigurationList = 148D180224C7A0000037DB00 /* Build configuration list for PBXNativeTarget "GithubRepositoriesTests" */;
 			buildPhases = (
 				2DBE5D435A1E5D29AEAD4EF1 /* [CP] Check Pods Manifest.lock */,
+				1454B24B24C9C020001BE0FE /* CUCKOO */,
 				148D17F224C7A0000037DB00 /* Sources */,
 				148D17F324C7A0000037DB00 /* Frameworks */,
 				148D17F424C7A0000037DB00 /* Resources */,
@@ -392,6 +393,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1454B24B24C9C020001BE0FE /* CUCKOO */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = CUCKOO;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\nOUTPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/SupportingFiles\"\nmkdir -p $OUTPUT_DIR\n\nOUTPUT_FILE=\"${OUTPUT_DIR}/CuckooMocks.generated.swift\" \ntouch $OUTPUT_FILE\n\nHEADER=\"'${PODS_ROOT}/Cuckoo/run' generate --testable '${PROJECT_NAME}' --output '${OUTPUT_FILE}'\"\n\nIFS=$'\\n'\n\nfor FILE in `find ${INPUT_DIR} -type f -name \"*.swift\"`; do\nif grep -q CUCKOO_TESTABLE \"${FILE}\"; then\nHEADER+=\" '${FILE}'\"\necho $FILE\nfi\ndone\n\necho $HEADER\neval $HEADER\n";
 		};
 		1ADBD1EC6900ECA0FE4BB33C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

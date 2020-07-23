@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import GithubRepositories
+@testable import PromiseKit
 
 class GithubRepositoriesTests: XCTestCase {
 

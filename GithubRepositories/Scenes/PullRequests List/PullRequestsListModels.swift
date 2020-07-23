@@ -40,7 +40,19 @@ enum PullRequestsList {
             body = pullRequest.body
             author = pullRequest.author.name
             authorImage = pullRequest.author.avatar
-            date = pullRequest.date
+            date = ViewModel.toBrazilianDate(pullRequest.date)
+        }
+        
+        static func toBrazilianDate(_ inputDate: String) -> String {
+             let requestDateFormatter = DateFormatter()
+             requestDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+             guard let requestDate = requestDateFormatter.date(from: inputDate) else { return "" }
+
+             let dateFormatter = DateFormatter()
+             dateFormatter.dateFormat = "dd/MM/yyyy"
+
+             return dateFormatter.string(from: requestDate)
         }
     }
     

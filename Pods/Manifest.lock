@@ -1,5 +1,7 @@
 PODS:
-  - Cuckoo (0.13.0)
+  - Cuckoo (1.4.1):
+    - Cuckoo/Swift (= 1.4.1)
+  - Cuckoo/Swift (1.4.1)
   - Nimble (7.3.4)
   - PromiseKit (6.10.0):
     - PromiseKit/CorePromise (= 6.10.0)
@@ -15,24 +17,33 @@ PODS:
   - SDWebImage/Core (5.4.0)
 
 DEPENDENCIES:
-  - Cuckoo (= 0.13.0)
+  - Cuckoo (from `https://github.com/SwiftKit/Cuckoo.git`, branch `master`)
   - Nimble (= 7.3.4)
   - PromiseKit (= 6.10.0)
   - SDWebImage (= 5.4.0)
 
 SPEC REPOS:
   trunk:
-    - Cuckoo
     - Nimble
     - PromiseKit
     - SDWebImage
 
+EXTERNAL SOURCES:
+  Cuckoo:
+    :branch: master
+    :git: https://github.com/SwiftKit/Cuckoo.git
+
+CHECKOUT OPTIONS:
+  Cuckoo:
+    :commit: bf197c4ccbe60dee563b7e5d9c9db6bd8c17cc82
+    :git: https://github.com/SwiftKit/Cuckoo.git
+
 SPEC CHECKSUMS:
-  Cuckoo: 3112ee8b01d84e21bde500a45f9992ac81d80006
+  Cuckoo: 4625f7f54d9bb880123270e8969898d6c1d036b5
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   PromiseKit: 1fdaeb6c0a94a5114fcb814ff3d772b86886ad4e
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
 
-PODFILE CHECKSUM: 3b67f6b787a3f120bdbddf05ddf6796e6a6ccbb6
+PODFILE CHECKSUM: b8ee5a575537170112a90e1f89ca462a63b3d104
 
 COCOAPODS: 1.8.4
