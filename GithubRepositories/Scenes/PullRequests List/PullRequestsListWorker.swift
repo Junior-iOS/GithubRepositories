@@ -19,7 +19,7 @@ class PullRequestsListWorker {
     
     let networkProvider = NetworkProvider.shared
     
-    func searchPullRequestsList(_ repository: Repository) -> Promise<PullRequestsList.RequestList> {
+    func searchPullRequestsList(_ repository: Repository) -> Promise<[PullRequestsList.RequestList]> {
         networkProvider.request(.pullRequests(author: repository.owner.name, repository: repository.name))
     }
     

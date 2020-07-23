@@ -37,7 +37,7 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
         worker?.searchPullRequestsList(selectedRepository).done(handleSuccess).catch(handleError)
     }
     
-    private func handleSuccess(_ response: PullRequestsList.RequestList) {
+    private func handleSuccess(_ response: [PullRequestsList.RequestList]) {
         print(response)
     }
     

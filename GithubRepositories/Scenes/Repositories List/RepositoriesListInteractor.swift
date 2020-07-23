@@ -63,7 +63,8 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     
     private func handleSuccess(_ response: RepositoriesList.Response) {
         guard let repositoriesResponse = response.repositories else { return }
-        repositories = repositoriesResponse
+        repositories.append(contentsOf: repositoriesResponse)
+        currentPage = currentPage + 1
         presenter?.reloadTableView()
     }
     
@@ -72,9 +73,8 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     }
     
     func requestNextPage(index: Int) {
-        let targetCount = currentPage < 0 ? 1 : currentPage * pageSize - 10
-        if index != targetCount { return }
-        currentPage += 1
-        loadRepositoriesList(currentPage)
+        if index == repositories.count - 1 {
+            loadRepositoriesList(currentPage)
+        }
     }
 }

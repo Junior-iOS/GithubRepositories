@@ -18,7 +18,7 @@ enum PullRequestsList {
         let author: Owner
         let title: String
         let date: String
-        let body: String
+        let body: String?
         
         enum CodingKeys: String, CodingKey {
             case author = "user"
@@ -30,7 +30,7 @@ enum PullRequestsList {
     
     struct ViewModel {
         let title: String
-        let body: String
+        let body: String?
         let author: String
         let authorImage: String
         let date: String
