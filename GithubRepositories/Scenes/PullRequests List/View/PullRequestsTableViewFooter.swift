@@ -10,11 +10,21 @@ import UIKit
 
 class PullRequestsTableViewFooter: UIView {
 
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     lazy var contentView: UIView = {
         let view = UIView()
         view.isAccessibilityElement = true
         view.alpha = 0
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
     
@@ -26,6 +36,7 @@ class PullRequestsTableViewFooter: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         return imageView
     }()
     
@@ -37,17 +48,9 @@ class PullRequestsTableViewFooter: UIView {
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
-    
-    init() {
-        super.init(frame: .zero)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
 }
 

@@ -11,7 +11,6 @@ import SDWebImage
 
 class RepositoriesListTableViewCell: UITableViewCell {
     
-    let primaryColor: UIColor = .black
     static let identifier = "RepositoriesListCell"
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -25,13 +24,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryView: UIView = {
         let view = UIView()
-        
         view.backgroundColor = .clear
-        view.layer.cornerRadius = 6
-        view.layer.shadowColor = UIColor.lightGray.cgColor
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 6
-        view.layer.shadowOpacity = 0.2
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -39,7 +32,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryPhotoImageView: UIImageView = {
         let imageView = UIImageView()
-        
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
@@ -50,7 +42,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryNameLabel: UILabel = {
         let label = UILabel()
-        
         label.font = UIFont(name: "Avenir Next", size: 15)
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -61,7 +52,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryOwnerLabel: UILabel = {
         let label = UILabel()
-        
         label.font = UIFont(name: "Avenir Next", size: 13)
         label.textColor = UIColor.brown
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -72,7 +62,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryStarsImage: UIImageView = {
         let imageView = UIImageView()
-        
         imageView.image = UIImage(named: "star")
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,7 +71,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryStarsAmountLabel: UILabel = {
         let label = UILabel()
-        
         label.font = UIFont(name: "Avenir Next", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .right
@@ -94,7 +82,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryForksImage: UIImageView = {
         let imageView = UIImageView()
-        
         imageView.image = UIImage(named: "fork")
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +91,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryForksAmountLabel: UILabel = {
         let label = UILabel()
-        
         label.font = UIFont(name: "Avenir Next", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .right
@@ -116,7 +102,6 @@ class RepositoriesListTableViewCell: UITableViewCell {
     
     private lazy var repositoryDescriptionLabel: UILabel = {
         let label = UILabel()
-        
         label.font = UIFont(name: "Avenir Next", size: 15)
         label.textColor = UIColor.black
         label.textAlignment = .justified

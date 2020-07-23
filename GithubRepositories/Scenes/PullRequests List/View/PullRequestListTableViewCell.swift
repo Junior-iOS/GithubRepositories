@@ -9,17 +9,22 @@
 import UIKit
 import SDWebImage
 
-class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
+class PullRequestListTableViewCell: UITableViewCell {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     static let identifier = "PullRequestCell"
 
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
-        view.layer.cornerRadius = 6
-        view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOffset = .zero
-        view.layer.shadowRadius = 6
-        view.layer.shadowOpacity = 0.2
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -71,16 +76,11 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+}
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+extension PullRequestListTableViewCell: CustomViewDelegate {
+    
     func configure(_ model: PullRequestsList.ViewModel) {
         titleLabel.text = model.title
         bodyLabel.text = model.body

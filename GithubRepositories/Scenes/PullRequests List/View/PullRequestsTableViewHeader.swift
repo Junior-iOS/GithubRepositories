@@ -10,11 +10,21 @@ import UIKit
 
 class PullRequestsTableViewHeader: UIView {
     
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     lazy var contentView: UIView = {
         let view = UIView()
         view.isAccessibilityElement = true
         view.alpha = 0
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
     
@@ -24,6 +34,7 @@ class PullRequestsTableViewHeader: UIView {
         label.font = UIFont(name: "Avenir Next", size: 26)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -31,17 +42,9 @@ class PullRequestsTableViewHeader: UIView {
         let view = UIView()
         view.backgroundColor = UIColor.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
-    
-    init() {
-        super.init(frame: .zero)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
 }
 
