@@ -29,11 +29,11 @@ enum PullRequestsList {
     }
     
     struct ViewModel {
-        let title: String
-        let body: String?
-        let author: String
-        let authorImage: String
-        let date: String
+        var title: String
+        var body: String?
+        var author: String
+        var authorImage: String
+        var date: String
         
         init(pullRequest: RequestList) {
             title = pullRequest.title

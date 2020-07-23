@@ -15,11 +15,13 @@
 import UIKit
 
 protocol PullRequestsListPresentationLogic {
-    
+    func reloadTable()
 }
 
 class PullRequestsListPresenter: PullRequestsListPresentationLogic {
     weak var viewController: PullRequestsListDisplayLogic?
-
     
+    func reloadTable() {
+        viewController?.reloadTable()
+    }
 }

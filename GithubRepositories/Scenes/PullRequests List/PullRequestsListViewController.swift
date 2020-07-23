@@ -13,7 +13,7 @@
 import UIKit
 
 protocol PullRequestsListDisplayLogic: class {
-    
+    func reloadTable()
 }
 
 class PullRequestsListViewController: UIViewController {
@@ -55,13 +55,17 @@ class PullRequestsListViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(PullRequestListTableViewCell.self, forCellReuseIdentifier: PullRequestListTableViewCell.identifier)
     }
 
 }
 
 extension PullRequestsListViewController: PullRequestsListDisplayLogic {
-
     
+    func reloadTable() {
+        tableView.reloadData()
+    }
 
 }
 
@@ -69,15 +73,21 @@ extension PullRequestsListViewController: PullRequestsListDisplayLogic {
 extension PullRequestsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        interactor?.didSelectRow(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return interactor?.numberOfRows ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PullRequestListTableViewCell.identifier) as? PullRequestListTableViewCell,
+            let viewModel = interactor?.cellForRow(at: indexPath.row) else { return UITableViewCell() }
+        
+        cell.configure(viewModel)
+        cell.accessibilityLabel = "Pull Requests"
+        
+        return cell
     }
     
 }

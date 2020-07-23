@@ -16,6 +16,9 @@ import UIKit
 
 protocol PullRequestsListBusinessLogic {
     func fetchPullRequestsList()
+    func didSelectRow(at index: Int)
+    var numberOfRows: Int { get }
+    func cellForRow(at index: Int) -> PullRequestsList.ViewModel
 }
 
 protocol PullRequestsListDataStore {
@@ -27,18 +30,34 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     var worker: PullRequestsListWorker?
     
     var repository: Repository?
+    var pullRequests: [PullRequestsList.RequestList] = []
     
     init(worker: PullRequestsListWorker = PullRequestsListWorker()) {
         self.worker = worker
     }
     
+    func didSelectRow(at index: Int) {
+        
+    }
+    
+    var numberOfRows: Int {
+        pullRequests.count
+    }
+    
+    func cellForRow(at index: Int) -> PullRequestsList.ViewModel {
+        let pullRequest = pullRequests[index]
+        return PullRequestsList.ViewModel(pullRequest: pullRequest)
+    }
+    
     func fetchPullRequestsList() {
         guard let selectedRepository = repository else { return }
-        worker?.searchPullRequestsList(selectedRepository).done(handleSuccess).catch(handleError)
+        worker?.searchPullRequestsList(selectedRepository).done(handleSuccess).catch(handleError).finally {
+            self.presenter?.reloadTable()
+        }
     }
     
     private func handleSuccess(_ response: [PullRequestsList.RequestList]) {
-        print(response)
+        pullRequests = response
     }
     
     private func handleError(_ error: Error) {
