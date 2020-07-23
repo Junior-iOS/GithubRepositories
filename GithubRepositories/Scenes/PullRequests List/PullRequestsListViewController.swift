@@ -11,12 +11,14 @@
 //
 
 import UIKit
+import SafariServices
 
 protocol PullRequestsListDisplayLogic: class {
     func reloadTable()
     func stopActivityIndicator()
     func displayEmptyState()
     func displayRequestOwner(_ repo: Repository)
+    func displayGithubPageFor(_ html: String)
 }
 
 class PullRequestsListViewController: UIViewController {
@@ -106,6 +108,12 @@ extension PullRequestsListViewController: PullRequestsListDisplayLogic {
         footer.frame.size.width = kScreenWidth
         tableView.tableFooterView = footer
         tableView.reloadData()
+    }
+    
+    func displayGithubPageFor(_ html: String) {
+        guard let url = URL(string: html) else { return }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
 
 }

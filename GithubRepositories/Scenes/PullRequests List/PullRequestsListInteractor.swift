@@ -37,7 +37,7 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     }
     
     func didSelectRow(at index: Int) {
-        
+        openGithubPage(at: index)
     }
     
     var numberOfRows: Int {
@@ -65,6 +65,10 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     
     private func handleError(_ error: Error) {
         print(error.localizedDescription)
+    }
+    
+    private func openGithubPage(at index: Int) {
+        presenter?.presentGithubPageFor(pullRequests[index].html)
     }
     
 }

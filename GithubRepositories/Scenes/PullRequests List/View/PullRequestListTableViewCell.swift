@@ -139,6 +139,7 @@ extension PullRequestListTableViewCell: CustomViewDelegate {
     func setupConfigurations() {
         backgroundColor = .clear
         selectionStyle = .none
+        accessoryType = .disclosureIndicator
     }
 
 }

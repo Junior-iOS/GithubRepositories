@@ -64,7 +64,7 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     private func handleSuccess(_ response: RepositoriesList.Response) {
         guard let repositoriesResponse = response.repositories else { return }
         repositories.append(contentsOf: repositoriesResponse)
-        currentPage = currentPage + 1
+        currentPage += 1
         presenter?.reloadTableView()
     }
     

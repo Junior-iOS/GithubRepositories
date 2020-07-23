@@ -19,12 +19,14 @@ enum PullRequestsList {
         let title: String
         let date: String
         let body: String?
+        let html: String
         
         enum CodingKeys: String, CodingKey {
             case author = "user"
             case title
             case date = "created_at"
             case body
+            case html = "html_url"
         }
     }
     
@@ -34,6 +36,7 @@ enum PullRequestsList {
         var author: String
         var authorImage: String
         var date: String
+        var html: String
         
         init(pullRequest: RequestList) {
             title = pullRequest.title
@@ -41,6 +44,7 @@ enum PullRequestsList {
             author = pullRequest.author.name
             authorImage = pullRequest.author.avatar
             date = ViewModel.toBrazilianDate(pullRequest.date)
+            html = pullRequest.html
         }
         
         static func toBrazilianDate(_ inputDate: String) -> String {

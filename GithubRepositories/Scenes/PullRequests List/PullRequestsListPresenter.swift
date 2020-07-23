@@ -19,6 +19,7 @@ protocol PullRequestsListPresentationLogic {
     func stopActivityIndicator()
     func presentEmptyState()
     func presentRequestOwner(_ repo: Repository)
+    func presentGithubPageFor(_ html: String)
 }
 
 class PullRequestsListPresenter: PullRequestsListPresentationLogic {
@@ -38,5 +39,9 @@ class PullRequestsListPresenter: PullRequestsListPresentationLogic {
     
     func presentRequestOwner(_ repo: Repository) {
         viewController?.displayRequestOwner(repo)
+    }
+    
+    func presentGithubPageFor(_ html: String) {
+        viewController?.displayGithubPageFor(html)
     }
 }
