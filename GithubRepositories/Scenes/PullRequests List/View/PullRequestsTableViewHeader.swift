@@ -22,7 +22,7 @@ class PullRequestsTableViewHeader: UIView {
         let label = UILabel()
         label.text = "Loading..."
         label.font = UIFont(name: "Avenir Next", size: 26)
-        label.textColor = .gray
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

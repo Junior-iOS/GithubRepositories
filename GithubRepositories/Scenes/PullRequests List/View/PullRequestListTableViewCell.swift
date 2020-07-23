@@ -14,7 +14,7 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
 
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor.clear
         view.layer.cornerRadius = 6
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOffset = .zero
@@ -23,11 +23,31 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var userImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.masksToBounds = false
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var userLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir Next", size: 14)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = UIColor.gray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        //label.font = .rounded(fontSize: 16, weight: .semibold)
+        label.font = UIFont(name: "Avenir Next", size: 16)
         label.textColor = UIColor.gray
+        label.textAlignment = .center
         label.numberOfLines = 0
         label.accessibilityHint = "Pull Requests"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -36,34 +56,18 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
 
     private lazy var bodyLabel: UILabel = {
         let label = UILabel()
-        //label.font = .rounded(fontSize: 14, weight: .medium)
+        label.font = UIFont(name: "Avenir Next", size: 14)
         label.textColor = UIColor.lightGray
         label.numberOfLines = 3
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    private lazy var photoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.masksToBounds = false
-        imageView.layer.cornerRadius = 20
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    private lazy var userLabel: UILabel = {
-        let label = UILabel()
-        //label.font = .rounded(fontSize: 14, weight: .bold)
-        label.textColor = UIColor.gray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
-        //label.font = .rounded(fontSize: 13, weight: .regular)
+        label.font = UIFont(name: "Avenir Next", size: 13)
         label.textColor = UIColor.black
+        label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -84,47 +88,52 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
         dateLabel.text = model.date
 
         if let photoUrl = URL(string: model.authorImage) {
-            photoImageView.sd_setImage(with: photoUrl)
+            userImageView.sd_setImage(with: photoUrl)
         }
     }
 
     func setupViews() {
         contentView.addSubview(containerView)
 
+        containerView.addSubview(userImageView)
+        containerView.addSubview(userLabel)
         containerView.addSubview(titleLabel)
         containerView.addSubview(bodyLabel)
-        containerView.addSubview(photoImageView)
-        containerView.addSubview(userLabel)
         containerView.addSubview(dateLabel)
     }
 
     func setupConstraints() {
-        containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6).isActive = true
+        NSLayoutConstraint.activate([containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+                                     containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+                                     containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+                                     containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6)
+        ])
+        
+        NSLayoutConstraint.activate([userImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6),
+                                     userImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+                                     userImageView.widthAnchor.constraint(equalToConstant: 40),
+                                     userImageView.heightAnchor.constraint(equalToConstant: 40)
+        ])
 
-        titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16).isActive = true
+        NSLayoutConstraint.activate([userLabel.topAnchor.constraint(equalTo: userImageView.bottomAnchor, constant: 4),
+                                     userLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                                     userLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
 
-        bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
-        bodyLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        bodyLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 4),
+                                     titleLabel.leadingAnchor.constraint(equalTo: userLabel.leadingAnchor),
+                                     titleLabel.trailingAnchor.constraint(equalTo: userLabel.trailingAnchor)
+        ])
 
-        photoImageView.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: 10).isActive = true
-        photoImageView.leadingAnchor.constraint(equalTo: bodyLabel.leadingAnchor).isActive = true
-        photoImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        photoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        photoImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16).isActive = true
+        NSLayoutConstraint.activate([bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+                                     bodyLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+                                     bodyLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+        ])
 
-        userLabel.topAnchor.constraint(equalTo: photoImageView.topAnchor, constant: 4).isActive = true
-        userLabel.leadingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: 8).isActive = true
-        userLabel.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor).isActive = true
-
-        dateLabel.topAnchor.constraint(equalTo: userLabel.bottomAnchor).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: userLabel.leadingAnchor).isActive = true
-        dateLabel.trailingAnchor.constraint(equalTo: userLabel.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([dateLabel.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: 4),
+                                     dateLabel.leadingAnchor.constraint(equalTo: bodyLabel.leadingAnchor),
+                                     dateLabel.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor)
+        ])
     }
 
     func setupConfigurations() {
@@ -132,8 +141,4 @@ class PullRequestListTableViewCell: UITableViewCell, CustomViewDelegate {
         selectionStyle = .none
     }
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        containerView.layer.shadowColor = UIColor.gray.cgColor
-    }
 }
