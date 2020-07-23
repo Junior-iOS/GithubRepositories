@@ -132,7 +132,8 @@ extension PullRequestListTableViewCell: CustomViewDelegate {
 
         NSLayoutConstraint.activate([dateLabel.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: 4),
                                      dateLabel.leadingAnchor.constraint(equalTo: bodyLabel.leadingAnchor),
-                                     dateLabel.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor)
+                                     dateLabel.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor),
+                                     dateLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -6)
         ])
     }
 

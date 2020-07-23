@@ -58,14 +58,13 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     func loadRepositoriesList(_ page: Int) {
         worker?.searchRepositoriesList(page: page).done(handleSuccess).catch(handleError).finally {
             self.presenter?.stopsActivityIndicator()
+            self.presenter?.reloadTableView()
         }
     }
     
     private func handleSuccess(_ response: RepositoriesList.Response) {
         guard let repositoriesResponse = response.repositories else { return }
         repositories.append(contentsOf: repositoriesResponse)
-        currentPage += 1
-        presenter?.reloadTableView()
     }
     
     private func handleError(_ error: Error) {
@@ -73,8 +72,11 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     }
     
     func requestNextPage(index: Int) {
-        if index == repositories.count - 1 {
-            loadRepositoriesList(currentPage)
+        if index == repositories.count - 10 {
+            if index < repositories.count {
+                currentPage += 1
+                loadRepositoriesList(currentPage)
+            }
         }
     }
 }

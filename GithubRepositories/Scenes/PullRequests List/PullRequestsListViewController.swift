@@ -80,6 +80,7 @@ class PullRequestsListViewController: UIViewController {
         tableView.tableHeaderView = tableHeaderView
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         tableView.separatorStyle = .singleLine
         tableView.register(PullRequestListTableViewCell.self, forCellReuseIdentifier: PullRequestListTableViewCell.identifier)
     }

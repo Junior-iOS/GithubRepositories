@@ -43,7 +43,7 @@ class PullRequestsTableViewFooter: UIView {
     private lazy var emptyStateLabel: UIView = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir Next", size: 15)
-        label.text = "Nenhuma Request localizada! =("
+        label.text = "Nenhuma PullRequest localizada! =("
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

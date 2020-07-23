@@ -26,11 +26,18 @@
 		142AC8BC24C7FCB0004076FB /* RepositoriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142AC8BB24C7FCB0004076FB /* RepositoriesListViewController.xib */; };
 		142AC8C124C80041004076FB /* CustomViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC8C024C80041004076FB /* CustomViewDelegate.swift */; };
 		1454B24924C9433F001BE0FE /* PullRequestsTableViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454B24824C9433F001BE0FE /* PullRequestsTableViewFooter.swift */; };
+		146E244224CA345D005AE387 /* RepositoriesListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244124CA345D005AE387 /* RepositoriesListPresenterMock.swift */; };
+		146E244424CA347A005AE387 /* RepositoriesListWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244324CA347A005AE387 /* RepositoriesListWorkerMock.swift */; };
+		146E244624CA34A5005AE387 /* PullRequestsListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244524CA34A5005AE387 /* PullRequestsListPresenterMock.swift */; };
+		146E244824CA34BD005AE387 /* PullRequestsListWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244724CA34BD005AE387 /* PullRequestsListWorkerMock.swift */; };
+		146E244D24CA353D005AE387 /* RepositoriesListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244C24CA353D005AE387 /* RepositoriesListViewControllerTest.swift */; };
+		146E244F24CA3557005AE387 /* RepositoriesListInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E244E24CA3557005AE387 /* RepositoriesListInteractorMock.swift */; };
+		146E245124CA3578005AE387 /* PullRequestsListInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E245024CA3578005AE387 /* PullRequestsListInteractorTest.swift */; };
+		146E245324CA358B005AE387 /* PullRequestsListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146E245224CA358B005AE387 /* PullRequestsListViewControllerMock.swift */; };
 		148D17E424C79FFF0037DB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E324C79FFF0037DB00 /* AppDelegate.swift */; };
 		148D17E624C79FFF0037DB00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17E524C79FFF0037DB00 /* SceneDelegate.swift */; };
 		148D17ED24C7A0000037DB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148D17EC24C7A0000037DB00 /* Assets.xcassets */; };
 		148D17F024C7A0000037DB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148D17EE24C7A0000037DB00 /* LaunchScreen.storyboard */; };
-		148D17FB24C7A0000037DB00 /* GithubRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148D17FA24C7A0000037DB00 /* GithubRepositoriesTests.swift */; };
 		14F4E98224C9211A00A3572E /* RepositoriesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E98124C9211A00A3572E /* RepositoriesListTableViewCell.swift */; };
 		14F4E98624C922C300A3572E /* PullRequestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E98524C922C300A3572E /* PullRequestListTableViewCell.swift */; };
 		14F4E98824C9231800A3572E /* PullRequestsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F4E98724C9231800A3572E /* PullRequestsListViewController.xib */; };
@@ -69,6 +76,15 @@
 		142AC8BB24C7FCB0004076FB /* RepositoriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesListViewController.xib; sourceTree = "<group>"; };
 		142AC8C024C80041004076FB /* CustomViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDelegate.swift; sourceTree = "<group>"; };
 		1454B24824C9433F001BE0FE /* PullRequestsTableViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsTableViewFooter.swift; sourceTree = "<group>"; };
+		146E244024CA345C005AE387 /* GithubRepositoriesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GithubRepositoriesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		146E244124CA345D005AE387 /* RepositoriesListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListPresenterMock.swift; sourceTree = "<group>"; };
+		146E244324CA347A005AE387 /* RepositoriesListWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListWorkerMock.swift; sourceTree = "<group>"; };
+		146E244524CA34A5005AE387 /* PullRequestsListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListPresenterMock.swift; sourceTree = "<group>"; };
+		146E244724CA34BD005AE387 /* PullRequestsListWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListWorkerMock.swift; sourceTree = "<group>"; };
+		146E244C24CA353D005AE387 /* RepositoriesListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewControllerTest.swift; sourceTree = "<group>"; };
+		146E244E24CA3557005AE387 /* RepositoriesListInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListInteractorMock.swift; sourceTree = "<group>"; };
+		146E245024CA3578005AE387 /* PullRequestsListInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListInteractorTest.swift; sourceTree = "<group>"; };
+		146E245224CA358B005AE387 /* PullRequestsListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsListViewControllerMock.swift; sourceTree = "<group>"; };
 		148D17E024C79FFF0037DB00 /* GithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148D17E324C79FFF0037DB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		148D17E524C79FFF0037DB00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +92,6 @@
 		148D17EF24C7A0000037DB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		148D17F124C7A0000037DB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		148D17F624C7A0000037DB00 /* GithubRepositoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubRepositoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		148D17FA24C7A0000037DB00 /* GithubRepositoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepositoriesTests.swift; sourceTree = "<group>"; };
 		148D17FC24C7A0000037DB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F4E98124C9211A00A3572E /* RepositoriesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesListTableViewCell.swift; sourceTree = "<group>"; };
 		14F4E98524C922C300A3572E /* PullRequestListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestListTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,6 +218,54 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		146E243E24CA3415005AE387 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				146E243F24CA3428005AE387 /* Mocks */,
+				146E244924CA34D4005AE387 /* Scenes */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		146E243F24CA3428005AE387 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				146E244024CA345C005AE387 /* GithubRepositoriesTests-Bridging-Header.h */,
+				146E244124CA345D005AE387 /* RepositoriesListPresenterMock.swift */,
+				146E244324CA347A005AE387 /* RepositoriesListWorkerMock.swift */,
+				146E244524CA34A5005AE387 /* PullRequestsListPresenterMock.swift */,
+				146E244724CA34BD005AE387 /* PullRequestsListWorkerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		146E244924CA34D4005AE387 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				146E244A24CA34F4005AE387 /* Repositories List */,
+				146E244B24CA34FF005AE387 /* PullRequests List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		146E244A24CA34F4005AE387 /* Repositories List */ = {
+			isa = PBXGroup;
+			children = (
+				146E244E24CA3557005AE387 /* RepositoriesListInteractorMock.swift */,
+				146E244C24CA353D005AE387 /* RepositoriesListViewControllerTest.swift */,
+			);
+			path = "Repositories List";
+			sourceTree = "<group>";
+		};
+		146E244B24CA34FF005AE387 /* PullRequests List */ = {
+			isa = PBXGroup;
+			children = (
+				146E245024CA3578005AE387 /* PullRequestsListInteractorTest.swift */,
+				146E245224CA358B005AE387 /* PullRequestsListViewControllerMock.swift */,
+			);
+			path = "PullRequests List";
+			sourceTree = "<group>";
+		};
 		148D17D724C79FFF0037DB00 = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +301,7 @@
 		148D17F924C7A0000037DB00 /* GithubRepositoriesTests */ = {
 			isa = PBXGroup;
 			children = (
-				148D17FA24C7A0000037DB00 /* GithubRepositoriesTests.swift */,
+				146E243E24CA3415005AE387 /* Unit Tests */,
 				148D17FC24C7A0000037DB00 /* Info.plist */,
 			);
 			path = GithubRepositoriesTests;
@@ -332,6 +395,7 @@
 					};
 					148D17F524C7A0000037DB00 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 						TestTargetID = 148D17DF24C79FFF0037DB00;
 					};
 				};
@@ -510,7 +574,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				148D17FB24C7A0000037DB00 /* GithubRepositoriesTests.swift in Sources */,
+				146E244D24CA353D005AE387 /* RepositoriesListViewControllerTest.swift in Sources */,
+				146E245324CA358B005AE387 /* PullRequestsListViewControllerMock.swift in Sources */,
+				146E244824CA34BD005AE387 /* PullRequestsListWorkerMock.swift in Sources */,
+				146E244424CA347A005AE387 /* RepositoriesListWorkerMock.swift in Sources */,
+				146E244224CA345D005AE387 /* RepositoriesListPresenterMock.swift in Sources */,
+				146E244F24CA3557005AE387 /* RepositoriesListInteractorMock.swift in Sources */,
+				146E245124CA3578005AE387 /* PullRequestsListInteractorTest.swift in Sources */,
+				146E244624CA34A5005AE387 /* PullRequestsListPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +765,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DV26HR9J2M;
 				INFOPLIST_FILE = GithubRepositoriesTests/Info.plist;
@@ -705,6 +777,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.njdevelopment.GithubRepositoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GithubRepositoriesTests/Unit Tests/Mocks/GithubRepositoriesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubRepositories.app/GithubRepositories";
@@ -717,6 +791,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DV26HR9J2M;
 				INFOPLIST_FILE = GithubRepositoriesTests/Info.plist;
@@ -728,6 +803,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.njdevelopment.GithubRepositoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GithubRepositoriesTests/Unit Tests/Mocks/GithubRepositoriesTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubRepositories.app/GithubRepositories";
