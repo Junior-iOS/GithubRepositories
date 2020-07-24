@@ -40,7 +40,7 @@ class RepositoriesListViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
-        interactor?.loadRepositoriesList(1)
+        interactor?.loadRepositoriesList()
     }
 
     private func setup() {

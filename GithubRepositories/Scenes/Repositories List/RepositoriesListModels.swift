@@ -15,7 +15,7 @@ import UIKit
 enum RepositoriesList {
     
     struct Response: Codable {
-        let repositories: [Repository]?
+        var repositories: [Repository]?
         
         enum CodingKeys: String, CodingKey {
             case repositories = "items"

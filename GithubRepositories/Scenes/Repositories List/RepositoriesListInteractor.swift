@@ -15,7 +15,7 @@
 import UIKit
 
 protocol RepositoriesListBusinessLogic {
-    func loadRepositoriesList(_ page: Int)
+    func loadRepositoriesList()
     func requestNextPage(index: Int)
     
     func didSelectRow(at index: Int)
@@ -55,8 +55,8 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
         return RepositoriesList.ViewModel(repository: repository)
     }
     
-    func loadRepositoriesList(_ page: Int) {
-        worker?.searchRepositoriesList(page: page).done(handleSuccess).catch(handleError).finally {
+    func loadRepositoriesList() {
+        worker?.searchRepositoriesList(page: currentPage).done(handleSuccess).catch(handleError).finally {
             self.presenter?.stopsActivityIndicator()
             self.presenter?.reloadTableView()
         }
@@ -68,14 +68,14 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     }
     
     private func handleError(_ error: Error) {
-        
+        print(error.localizedDescription)
     }
     
     func requestNextPage(index: Int) {
         if index == repositories.count - 10 {
             if index < repositories.count {
                 currentPage += 1
-                loadRepositoriesList(currentPage)
+                loadRepositoriesList()
             }
         }
     }

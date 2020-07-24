@@ -16,7 +16,7 @@ enum ResultTypes {
     case empty
 }
 
-class RepositoiriesListWorkerMock: RepositoriesListNetworkLogic {
+class RepositoriesListWorkerMock: RepositoriesListNetworkLogic {
     
     var resultType: ResultTypes = .success
     
@@ -39,6 +39,10 @@ class RepositoiriesListWorkerMock: RepositoriesListNetworkLogic {
             return Promise { seal in
                 seal.reject(NetworkError.mappingError)
             }
+        }
+        
+        return Promise { seal in
+            seal.reject(NetworkError.mappingError)
         }
     }
     
