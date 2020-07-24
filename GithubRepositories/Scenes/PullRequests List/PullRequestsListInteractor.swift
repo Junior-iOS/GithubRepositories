@@ -27,12 +27,12 @@ protocol PullRequestsListDataStore {
 
 class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsListDataStore {
     var presenter: PullRequestsListPresentationLogic?
-    var worker: PullRequestsListWorker?
+    var worker: PullRequestsListNetworkLogic?
     
     var repository: Repository?
     var pullRequests: [PullRequestsList.RequestList] = []
     
-    init(worker: PullRequestsListWorker = PullRequestsListWorker()) {
+    init(worker: PullRequestsListNetworkLogic = PullRequestsListWorker()) {
         self.worker = worker
     }
     

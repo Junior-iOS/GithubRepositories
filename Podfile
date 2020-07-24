@@ -8,10 +8,8 @@ target 'GithubRepositories' do
 
   target 'GithubRepositoriesTests' do
     inherit! :search_paths
-    pod 'Nimble', '7.3.4'
-    pod 'Cuckoo',
-    :git => 'https://github.com/SwiftKit/Cuckoo.git',
-    :branch => 'master'
+    pod 'Nimble', '8.0.4'
+    pod 'Quick', '2.2.0'
   end
 
 end

@@ -15,7 +15,11 @@
 import Foundation
 import PromiseKit
 
-class RepositoriesListWorker {
+protocol RepositoriesListNetworkLogic {
+    func searchRepositoriesList(page: Int) -> Promise<RepositoriesList.Response>
+}
+
+class RepositoriesListWorker: RepositoriesListNetworkLogic {
     
     let networkProvider = NetworkProvider.shared
     

@@ -29,14 +29,14 @@ protocol RepositoriesListDataStore {
 
 class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesListDataStore {
     var presenter: RepositoriesListPresentationLogic?
-    var worker: RepositoriesListWorker?
+    var worker: RepositoriesListNetworkLogic?
     
     var repository: Repository?
     var repositories = [Repository]()
     var currentPage: Int = 1
     var pageSize: Int = 25
     
-    init(worker: RepositoriesListWorker = RepositoriesListWorker()) {
+    init(worker: RepositoriesListNetworkLogic = RepositoriesListWorker()) {
         self.worker = worker
     }
     

@@ -15,7 +15,11 @@
 import Foundation
 import PromiseKit
 
-class PullRequestsListWorker {
+protocol PullRequestsListNetworkLogic {
+    func searchPullRequestsList(_ repository: Repository) -> Promise<[PullRequestsList.RequestList]>
+}
+
+class PullRequestsListWorker: PullRequestsListNetworkLogic {
     
     let networkProvider = NetworkProvider.shared
     
