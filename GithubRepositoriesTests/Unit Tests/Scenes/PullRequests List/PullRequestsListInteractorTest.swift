@@ -57,6 +57,12 @@ class PullRequestsListInteractorTest: QuickSpec {
                 }
                 
             }
+            
+            afterEach {
+                sut = nil
+                mockWorker = nil
+                mockPresenter = nil
+            }
         }
     }
     

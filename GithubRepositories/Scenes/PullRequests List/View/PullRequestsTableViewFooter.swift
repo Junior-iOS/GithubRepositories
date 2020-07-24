@@ -48,6 +48,8 @@ class PullRequestsTableViewFooter: UIView {
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isAccessibilityElement = true
+        label.accessibilityLabel = "Nenhuma PullRequest localizada!"
         
         return label
     }()

@@ -16,6 +16,10 @@ class RepositoriesListTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+        
+        let views = [repositoryPhotoImageView, repositoryNameLabel, repositoryOwnerLabel, repositoryStarsImage,
+                     repositoryStarsAmountLabel, repositoryForksImage, repositoryForksAmountLabel, repositoryDescriptionLabel]
+        views.forEach { $0.isAccessibilityElement = true }
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +40,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.accessibilityLabel = "Imagem do usuário"
         
         return imageView
     }()
@@ -46,6 +51,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         label.textColor = UIColor.black
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Nome do usuário"
         
         return label
     }()
@@ -56,6 +62,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         label.textColor = UIColor.brown
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Nome do repositório"
         
         return label
     }()
@@ -66,6 +73,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.accessibilityLabel = "Representação de estrela"
         
         return imageView
     }()
@@ -77,6 +85,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         label.textAlignment = .right
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Quantidade de estrelas"
         
         return label
     }()
@@ -87,6 +96,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.accessibilityLabel = "Representação de fork"
         
         return imageView
     }()
@@ -98,6 +108,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         label.textAlignment = .right
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Quantidade de forks"
         
         return label
     }()
@@ -110,6 +121,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Descrição"
         
         return label
     }()

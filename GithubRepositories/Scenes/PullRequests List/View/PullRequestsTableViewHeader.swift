@@ -13,6 +13,8 @@ class PullRequestsTableViewHeader: UIView {
     init() {
         super.init(frame: .zero)
         setup()
+        let views = [contentView, typeLabel, separatorView]
+        views.forEach({ $0.isAccessibilityElement = true })
     }
     
     required init?(coder: NSCoder) {
@@ -21,7 +23,6 @@ class PullRequestsTableViewHeader: UIView {
     
     lazy var contentView: UIView = {
         let view = UIView()
-        view.isAccessibilityElement = true
         view.alpha = 0
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -34,6 +35,7 @@ class PullRequestsTableViewHeader: UIView {
         label.font = UIFont(name: "Avenir Next", size: 26)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Título repositórios"
         
         return label
     }()

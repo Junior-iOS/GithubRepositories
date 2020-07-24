@@ -14,6 +14,8 @@ class PullRequestListTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+        let views = [userImageView, userLabel, titleLabel, bodyLabel, dateLabel]
+        views.forEach { $0.isAccessibilityElement = true }
     }
 
     required init?(coder: NSCoder) {
@@ -35,6 +37,8 @@ class PullRequestListTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.accessibilityLabel = "Foto do autor"
+        
         return imageView
     }()
     
@@ -45,6 +49,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.textColor = UIColor.gray
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Nome do autor"
         return label
     }()
 
@@ -56,6 +61,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.accessibilityHint = "Pull Requests"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Título do Pull Request"
         return label
     }()
 
@@ -65,6 +71,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.textColor = UIColor.lightGray
         label.numberOfLines = 3
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "Descrição do pull request"
         return label
     }()
 
@@ -74,6 +81,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.textColor = UIColor.black
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.accessibilityLabel = "data de criação do pull request"
         return label
     }()
     
