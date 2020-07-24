@@ -63,6 +63,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
     private lazy var repositoryStarsImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "star")
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -83,6 +84,7 @@ class RepositoriesListTableViewCell: UITableViewCell {
     private lazy var repositoryForksImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "fork")
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = UIColor.black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
