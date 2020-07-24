@@ -15,8 +15,8 @@ O projeto foi desenvolvido com a arquitetura **Clean Swift**, camada nativa de n
 - **Quick/Nimble**: Biblioteca para melhorar a verbosidade das assertivas do teste.
 
 ### Funcionalidades
-- [x] Listagem de filmes
-- [x] Detalhes do filme
+- [x] Listagem repositórios mais acessados do Github.
+- [x] Detalhes e listagem das pull requests mais acessadas.
 - [x] Testes unitários para Presenter e Interactor.
 - [x] Acessibilidade
 - [ ] Testes de UI
