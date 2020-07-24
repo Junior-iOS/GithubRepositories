@@ -50,6 +50,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.textColor = UIColor.gray
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityLabel = "Nome do autor"
+        
         return label
     }()
 
@@ -62,6 +63,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.accessibilityHint = "Pull Requests"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityLabel = "Título do Pull Request"
+        
         return label
     }()
 
@@ -72,6 +74,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.numberOfLines = 3
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityLabel = "Descrição do pull request"
+        
         return label
     }()
 
@@ -82,6 +85,7 @@ class PullRequestListTableViewCell: UITableViewCell {
         label.textAlignment = .right
         label.translatesAutoresizingMaskIntoConstraints = false
         label.accessibilityLabel = "data de criação do pull request"
+        
         return label
     }()
     
