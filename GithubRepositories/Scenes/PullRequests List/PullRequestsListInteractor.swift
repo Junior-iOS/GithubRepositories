@@ -64,7 +64,7 @@ class PullRequestsListInteractor: PullRequestsListBusinessLogic, PullRequestsLis
     }
     
     private func handleError(_ error: Error) {
-        print(error.localizedDescription)
+        
     }
     
     private func openGithubPage(at index: Int) {

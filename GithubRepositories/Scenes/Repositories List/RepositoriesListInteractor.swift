@@ -68,7 +68,7 @@ class RepositoriesListInteractor: RepositoriesListBusinessLogic, RepositoriesLis
     }
     
     private func handleError(_ error: Error) {
-        print(error.localizedDescription)
+        
     }
     
     func requestNextPage(index: Int) {

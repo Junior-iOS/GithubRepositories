@@ -28,7 +28,6 @@ class RepositoriesListRouter: NSObject, RepositoriesListRoutingLogic, Repositori
         let destinationVC = PullRequestsListViewController()
         var destinationDataStore = destinationVC.router?.dataStore
         passDataToPullRequestsList(source: dataStore, destination: &destinationDataStore)
-        //viewController?.navigationController?.pushViewController(destinationVC, animated: true)
         viewController?.present(destinationVC, animated: true)
     }
     
