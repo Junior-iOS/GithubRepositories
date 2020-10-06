@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D95B2DB80196A811F0B4AD /* Pods_GithubRepositoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E4DD0B0858BA8C29476DB /* Pods_GithubRepositoriesTests.framework */; };
 		142AC88324C7AC66004076FB /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC88224C7AC66004076FB /* BaseNavigationController.swift */; };
 		142AC88D24C7B012004076FB /* RepositoriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC88724C7B012004076FB /* RepositoriesListPresenter.swift */; };
 		142AC88E24C7B012004076FB /* RepositoriesListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142AC88824C7B012004076FB /* RepositoriesListWorker.swift */; };
@@ -46,8 +47,7 @@
 		14F4E98624C922C300A3572E /* PullRequestListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E98524C922C300A3572E /* PullRequestListTableViewCell.swift */; };
 		14F4E98824C9231800A3572E /* PullRequestsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F4E98724C9231800A3572E /* PullRequestsListViewController.xib */; };
 		14F4E98A24C9333500A3572E /* PullRequestsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E98924C9333500A3572E /* PullRequestsTableViewHeader.swift */; };
-		692B583E94372C67DCDDCD4C /* Pods_GithubRepositoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886EFA4B4BD7115D41BEACCC /* Pods_GithubRepositoriesTests.framework */; };
-		B9CF8BC5BDE35F9744F21EE4 /* Pods_GithubRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DDC8867C7D3B9912D35445 /* Pods_GithubRepositories.framework */; };
+		EB57AED6B98F40E092E69D6C /* Pods_GithubRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6E6FE411A7F8ACAAE2CF0 /* Pods_GithubRepositories.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,12 +105,12 @@
 		14F4E98524C922C300A3572E /* PullRequestListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestListTableViewCell.swift; sourceTree = "<group>"; };
 		14F4E98724C9231800A3572E /* PullRequestsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullRequestsListViewController.xib; sourceTree = "<group>"; };
 		14F4E98924C9333500A3572E /* PullRequestsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsTableViewHeader.swift; sourceTree = "<group>"; };
-		18DDC8867C7D3B9912D35445 /* Pods_GithubRepositories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepositories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59A3C55EEB02F5263CAB2319 /* Pods-GithubRepositoriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositoriesTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DC682ECB7EE2DF0DFFB0D84 /* Pods-GithubRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositories.release.xcconfig"; path = "Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories.release.xcconfig"; sourceTree = "<group>"; };
-		82E21CCE59B9F3364D562B56 /* Pods-GithubRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositories.debug.xcconfig"; path = "Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories.debug.xcconfig"; sourceTree = "<group>"; };
-		886EFA4B4BD7115D41BEACCC /* Pods_GithubRepositoriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepositoriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8252B5A910FA32548B9FFC7 /* Pods-GithubRepositoriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositoriesTests.release.xcconfig"; path = "Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests.release.xcconfig"; sourceTree = "<group>"; };
+		203E84C8BCBFF21BF228D638 /* Pods-GithubRepositoriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositoriesTests.debug.xcconfig"; path = "Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		300FBBD80A1B6EA16C4D7224 /* Pods-GithubRepositoriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositoriesTests.release.xcconfig"; path = "Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests.release.xcconfig"; sourceTree = "<group>"; };
+		55AE3FACFE7DC8107411BE3C /* Pods-GithubRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositories.debug.xcconfig"; path = "Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories.debug.xcconfig"; sourceTree = "<group>"; };
+		560B044AB7762BBFBC53275B /* Pods-GithubRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubRepositories.release.xcconfig"; path = "Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories.release.xcconfig"; sourceTree = "<group>"; };
+		7BE6E6FE411A7F8ACAAE2CF0 /* Pods_GithubRepositories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepositories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58E4DD0B0858BA8C29476DB /* Pods_GithubRepositoriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubRepositoriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9CF8BC5BDE35F9744F21EE4 /* Pods_GithubRepositories.framework in Frameworks */,
+				EB57AED6B98F40E092E69D6C /* Pods_GithubRepositories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				692B583E94372C67DCDDCD4C /* Pods_GithubRepositoriesTests.framework in Frameworks */,
+				06D95B2DB80196A811F0B4AD /* Pods_GithubRepositoriesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +289,7 @@
 				148D17F924C7A0000037DB00 /* GithubRepositoriesTests */,
 				148D17E124C79FFF0037DB00 /* Products */,
 				3D430099B4B6DD0EE8D7A9F6 /* Pods */,
-				4F622671C33A0516B92B9C1F /* Frameworks */,
+				67303BA9E10C8320E2D10522 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -356,19 +356,19 @@
 		3D430099B4B6DD0EE8D7A9F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				82E21CCE59B9F3364D562B56 /* Pods-GithubRepositories.debug.xcconfig */,
-				5DC682ECB7EE2DF0DFFB0D84 /* Pods-GithubRepositories.release.xcconfig */,
-				59A3C55EEB02F5263CAB2319 /* Pods-GithubRepositoriesTests.debug.xcconfig */,
-				F8252B5A910FA32548B9FFC7 /* Pods-GithubRepositoriesTests.release.xcconfig */,
+				55AE3FACFE7DC8107411BE3C /* Pods-GithubRepositories.debug.xcconfig */,
+				560B044AB7762BBFBC53275B /* Pods-GithubRepositories.release.xcconfig */,
+				203E84C8BCBFF21BF228D638 /* Pods-GithubRepositoriesTests.debug.xcconfig */,
+				300FBBD80A1B6EA16C4D7224 /* Pods-GithubRepositoriesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4F622671C33A0516B92B9C1F /* Frameworks */ = {
+		67303BA9E10C8320E2D10522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18DDC8867C7D3B9912D35445 /* Pods_GithubRepositories.framework */,
-				886EFA4B4BD7115D41BEACCC /* Pods_GithubRepositoriesTests.framework */,
+				7BE6E6FE411A7F8ACAAE2CF0 /* Pods_GithubRepositories.framework */,
+				B58E4DD0B0858BA8C29476DB /* Pods_GithubRepositoriesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -380,11 +380,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148D17FF24C7A0000037DB00 /* Build configuration list for PBXNativeTarget "GithubRepositories" */;
 			buildPhases = (
-				7A41130118C7E2428206C4B7 /* [CP] Check Pods Manifest.lock */,
+				BFD03D29AE3F758CFA7D886D /* [CP] Check Pods Manifest.lock */,
 				148D17DC24C79FFF0037DB00 /* Sources */,
 				148D17DD24C79FFF0037DB00 /* Frameworks */,
 				148D17DE24C79FFF0037DB00 /* Resources */,
-				37DA6D2E66594404FD4FDD04 /* [CP] Embed Pods Frameworks */,
+				FE29739517E9A649787C6A20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,11 +399,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 148D180224C7A0000037DB00 /* Build configuration list for PBXNativeTarget "GithubRepositoriesTests" */;
 			buildPhases = (
-				DF1241707C322E05E52A43D0 /* [CP] Check Pods Manifest.lock */,
+				F5C96E6D60E97446792B47CF /* [CP] Check Pods Manifest.lock */,
 				148D17F224C7A0000037DB00 /* Sources */,
 				148D17F324C7A0000037DB00 /* Frameworks */,
 				148D17F424C7A0000037DB00 /* Resources */,
-				6BAF013561F894B55ABAD117 /* [CP] Embed Pods Frameworks */,
+				05BAD53AC3597FDF96CD7A5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,24 +479,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37DA6D2E66594404FD4FDD04 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6BAF013561F894B55ABAD117 /* [CP] Embed Pods Frameworks */ = {
+		05BAD53AC3597FDF96CD7A5E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -513,7 +496,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubRepositoriesTests/Pods-GithubRepositoriesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A41130118C7E2428206C4B7 /* [CP] Check Pods Manifest.lock */ = {
+		BFD03D29AE3F758CFA7D886D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -535,7 +518,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF1241707C322E05E52A43D0 /* [CP] Check Pods Manifest.lock */ = {
+		F5C96E6D60E97446792B47CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -555,6 +538,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE29739517E9A649787C6A20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubRepositories/Pods-GithubRepositories-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -744,7 +744,7 @@
 		};
 		148D180024C7A0000037DB00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82E21CCE59B9F3364D562B56 /* Pods-GithubRepositories.debug.xcconfig */;
+			baseConfigurationReference = 55AE3FACFE7DC8107411BE3C /* Pods-GithubRepositories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -763,7 +763,7 @@
 		};
 		148D180124C7A0000037DB00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DC682ECB7EE2DF0DFFB0D84 /* Pods-GithubRepositories.release.xcconfig */;
+			baseConfigurationReference = 560B044AB7762BBFBC53275B /* Pods-GithubRepositories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -782,7 +782,7 @@
 		};
 		148D180324C7A0000037DB00 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59A3C55EEB02F5263CAB2319 /* Pods-GithubRepositoriesTests.debug.xcconfig */;
+			baseConfigurationReference = 203E84C8BCBFF21BF228D638 /* Pods-GithubRepositoriesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -808,7 +808,7 @@
 		};
 		148D180424C7A0000037DB00 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8252B5A910FA32548B9FFC7 /* Pods-GithubRepositoriesTests.release.xcconfig */;
+			baseConfigurationReference = 300FBBD80A1B6EA16C4D7224 /* Pods-GithubRepositoriesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
