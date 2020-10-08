@@ -18,7 +18,7 @@ struct NetworkProvider {
         func request<T: Codable>(_ endpoint: Endpoint) -> Promise<T> {
             return Promise { seal in
                 guard let url = endpoint.url else { return seal.reject(NetworkError.badUrl) }
-                //print("URL: ", url)
+                print("URL: ", url)
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     guard let data = data else { return seal.reject(NetworkError.emptyResponseDataError) }
                     
